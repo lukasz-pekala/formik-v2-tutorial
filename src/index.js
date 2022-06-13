@@ -6,14 +6,14 @@ import "./styles.css";
 const validate = (values) => {
   const errors = {};
   if (!values.firstName) {
-    errors.firstName = "Requred";
+    errors.firstName = "Required";
   } else if (values.firstName.length < 2) {
     errors.firstName = "Must be at least 2 characters";
   }
 
   if (!values.lastName) {
     errors.lastName = "Required";
-  } else if (values.lastName < 2) {
+  } else if (values.lastName.length < 2) {
     errors.lastName = "Must be at least 2 characters";
   }
 
@@ -42,6 +42,7 @@ const SignupForm = () => {
         name="firstName"
         type="text"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.firstName}
       />
       {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
@@ -52,6 +53,7 @@ const SignupForm = () => {
         name="lastName"
         type="text"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.lastName}
       />
       {formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
@@ -62,6 +64,7 @@ const SignupForm = () => {
         name="email"
         type="email"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.email}
       />
       {formik.errors.email ? <div>{formik.errors.email}</div> : null}
