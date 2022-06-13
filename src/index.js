@@ -36,6 +36,14 @@ const SignupForm = () => {
           <Field name="email" type="email" />
           <ErrorMessage name="email" />
 
+          <label htmlFor="bio">Bio</label>
+          <Field name="bio" as="textarea" />
+
+          <Field name="favouriteColor" as="select">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+          </Field>
+
           <button type="submit">Submit</button>
         </form>
       )}
