@@ -1,16 +1,14 @@
 {
-  "name": "formik-v2-tutorial-start",
+  "name": "formik-tutorial-lupe",
   "version": "1.0.0",
-  "description": "Starting point of the Formik  v2 Tutorial",
-  "keywords": [
-    "formik-tutorial",
-    "formik"
-  ],
+  "description": "",
+  "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "@emotion/core": "10.0.28",
     "@emotion/styled": "10.0.27",
     "formik": "2.1.4",
+    "joi": "17.6.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-scripts": "3.4.1",
