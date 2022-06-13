@@ -39,6 +39,7 @@ const SignupForm = () => {
           <label htmlFor="bio">Bio</label>
           <Field name="bio" as="textarea" />
 
+          <label htmlFor="favouriteColor">Favourite color</label>
           <Field name="favouriteColor" as="select">
             <option value="red">Red</option>
             <option value="blue">Blue</option>
