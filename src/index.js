@@ -1,9 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Field, ErrorMessage, Formik } from "formik";
+import { Field, ErrorMessage, Formik, useField } from "formik";
 import * as Yup from "yup";
 
 import "./styles.css";
+
+const MagicCheckbox = ({ children, ...props }) => {
+  const [field, meta] = useField({ ...props, type: "checkbox" });
+
+  return (
+    <>
+      <label className="checkbox-input">
+        <input type="checkbox" {...field} {...props} />
+        {children}
+      </label>
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </>
+  );
+};
 
 const SignupForm = () => {
   return (
@@ -44,6 +60,8 @@ const SignupForm = () => {
             <option value="red">Red</option>
             <option value="blue">Blue</option>
           </Field>
+
+          <MagicCheckbox name="terms">I accept the terms</MagicCheckbox>
 
           <button type="submit">Submit</button>
         </form>
